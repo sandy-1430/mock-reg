@@ -10,6 +10,8 @@ import MockRegister from "./Pages/Register/MockRegister";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import Instructions from "./Pages/Instructions";
+import PaymentSuccess from "./Pages/Payment/PaymentSuccess";
+import PaymentFailure from "./Pages/Payment/PaymentFailure";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/" exact element={<Instructions />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/home" exact element={<Home />} />
+            <Route path="/paymentSuccess" exact element={<PaymentSuccess />} />
+            <Route path="/paymentfailure" exact element={<PaymentFailure />} />
           </Routes>
         </Router>
       </div>

@@ -5,18 +5,20 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "./ContextApi/UserContext";
 import FormField from './FormField';
 import Payment from './Payment/Payment';
+import Loadingbox from './components/Loadingbox';
 
 export default function Home() {
     const [userInfo, setuserInfo] = useState({
     });
 
     const [step, setStep] = useState({
+        loading: false,
         trackAppl: false,
         verifyEmail: false,
-        currentStep: null,
+        currentStep: 1,
         form: true,
         review: false,
-        payment: true,
+        payment: false,
     });
 
     let navigate = useNavigate();
@@ -26,7 +28,7 @@ export default function Home() {
         if (getUserinfo) {
             setuserInfo(getUserinfo || null)
         } else {
-            navigate("/");
+            navigate("/login");
         }
     }, [navigate])
 
@@ -39,6 +41,7 @@ export default function Home() {
 
     return (
         <>
+            {step.loading && <Loadingbox />}
             <UserContext.Provider value={{ userInfo, setuserInfo, setStep, step }}>
                 {step.verifyEmail && <VerifyEmail />}
                 {step.trackAppl && <TrackApplication />}

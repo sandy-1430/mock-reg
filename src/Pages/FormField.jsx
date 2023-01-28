@@ -92,6 +92,7 @@ export default function FormField() {
                 review: false
             }))
         } else {
+            setStep((p) => ({ ...p, loading: true }))
             axios.post("http://97.74.94.225:8282/besstMainApi/mockReg/saveCuetMockPreReg",
                 userInfo,
                 {
@@ -104,6 +105,7 @@ export default function FormField() {
                     if (result.data.ResultMessage === "SUCCESS") {
                         setStep((prev) => ({
                             ...prev,
+                            loading: false,
                             currentStep: null,
                             payment: true,
                         }))

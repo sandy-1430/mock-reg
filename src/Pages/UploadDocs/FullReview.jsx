@@ -549,6 +549,47 @@ export default function FullReview() {
                         My Educate details are correct.
                     </label>
                 </div>
+
+
+                <div className="formGroup checkbox">
+                    <input id="myState" type="checkbox" required />
+                    <label htmlFor="myState">
+                        My state/UT from where I Passes/Appearing in 12th/Equivalent is correct, which is
+                        {" " + userInfo.cuetPreRegXAndXIIDtlsBeanList[1].qualifyingExamState}
+                    </label>
+                </div>
+                <div className="formGroup checkbox">
+                    <input id="qSubject" type="checkbox" required />
+                    <label htmlFor="qSubject">
+                        I have read the university admission guidelines and eligibility criteria and choose my examination subjects accordingly.
+                    </label>
+                </div>
+                <div className="formGroup checkbox">
+                    <input id="med" type="checkbox" required />
+                    <label htmlFor="med">
+                        My question paper medium is correct, which is {" " + userInfo.medOfStudy}.
+                    </label>
+                </div>
+                <div className="formGroup checkbox">
+                    <input id="examCities" type="checkbox" required />
+                    <label htmlFor="examCities">
+                        My choice of examination cities in order of preference are
+                    </label>
+                </div>
+                <div className="formGroup">
+                    <label>Preference 1 : {userInfo.cityPref1}</label>
+                </div>
+                <div className="formGroup">
+                    <label>Preference 2 : {userInfo.cityPref2}</label>
+                </div>
+                <div className="formGroup">
+                    <label>Preference 3 : {userInfo.cityPref3}</label>
+                </div>
+                <div className="formGroup">
+                    <label>Preference 4 : {userInfo.cityPref4}</label>
+                </div>
+
+
                 <div className="formGroup checkbox">
                     <input id="declar1" type="checkbox" required />
                     <label htmlFor="declar1">

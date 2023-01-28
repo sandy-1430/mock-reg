@@ -30,7 +30,7 @@ export default function PDReview() {
                     "labelTxt": "Category"
                 },
                 {
-                    "objName": "PwBD",
+                    "objName": "isPwBDBenchmark",
                     "labelTxt": "If you are a PwBD Candidate will benchmark disability 40% or more/severe where percentage is not defined"
                 },
                 {

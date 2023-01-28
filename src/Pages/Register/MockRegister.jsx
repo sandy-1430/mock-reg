@@ -50,9 +50,8 @@ export default function MockRegister() {
     let navigate = useNavigate();
 
     useEffect(() => {
-        let getUserinfo = JSON.parse(localStorage.getItem("userInfo"));
-        if (!getUserinfo) {
-            navigate("/");
+        if (JSON.parse(localStorage.getItem("userInfo"))) {
+            navigate("/home");
         }
     }, [navigate])
 

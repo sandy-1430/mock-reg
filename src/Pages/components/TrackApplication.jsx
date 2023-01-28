@@ -46,7 +46,7 @@ export default function TrackApplication() {
                             </div>
                             <div className="text-center py-4">
                                 {userInfo?.orderId
-                                    ? <button onClick={handleSteps} className='green_btn'>Download / Print : Confirmation Page </button>
+                                    ? <button className='green_btn'>Download / Print : Confirmation Page </button>
                                     : <button onClick={handleSteps} className='brown_btn'>Continue Application Form</button>
                                 }
                             </div>

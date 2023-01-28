@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 export default function Instructions() {
@@ -8,6 +9,12 @@ export default function Instructions() {
         e.preventDefault();
         navigate("/register");
     }
+
+    useEffect(() => {
+        if (JSON.parse(localStorage.getItem("userInfo"))) {
+            navigate("/home");
+        }
+    }, [navigate])
 
     return (
         <div className="container">

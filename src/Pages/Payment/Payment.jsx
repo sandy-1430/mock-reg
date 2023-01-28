@@ -12,6 +12,7 @@ export default function Payment() {
             orderAmt: 1300,
             isProceedToPymnt: true
         }))
+        setStep((p) => ({ ...p, loading: true }))
         if (userInfo.orderAmt) {
             axios.post("http://97.74.94.225:8282/besstMainApi/mockReg/saveCuetMockPreReg",
                 userInfo,
@@ -32,6 +33,7 @@ export default function Payment() {
                         }))
                         setStep((prev) => ({
                             ...prev,
+                            loading: false,
                             trackAppl: true,
                             payment: false,
                         }))
