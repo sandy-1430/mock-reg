@@ -365,7 +365,7 @@ export default function FullReview() {
                                 <div key={uid(label)} className='flex_50 d-flex col-gap-20'>
                                     <p className='flex_50'>{label.labelTxt}</p>
                                     <p className='flex_50'>
-                                        <b>{label.objName === "dob" && userInfo[label.objName].toLocaleDateString()}
+                                        <b>{label.objName === "dob" && new Date(userInfo[label.objName]).toLocaleDateString()}
                                             {label.objName !== "dob" && userInfo[label.objName]}</b>
                                     </p>
                                 </div>
@@ -528,7 +528,7 @@ export default function FullReview() {
                 <div className="formGroup checkbox">
                     <input id="dobVerify" type="checkbox" required />
                     <label htmlFor="dobVerify">
-                        My Date of Birth is {userInfo.dob.toLocaleDateString()} as per the Xth Marksheet/Certificate
+                        My Date of Birth is {new Date(userInfo.dob).toLocaleDateString()} as per the Xth Marksheet/Certificate
                     </label>
                 </div>
                 <div className="formGroup checkbox">

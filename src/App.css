@@ -44,6 +44,14 @@ p {
     flex-basis: 50%;
 }
 
+.flex_70 {
+    flex-basis: 70%;
+}
+
+.flex_30 {
+    flex-basis: 30%;
+}
+
 .green_btn,
 .outline_btn,
 .brown_btn,

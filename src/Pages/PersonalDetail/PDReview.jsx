@@ -199,7 +199,7 @@ export default function PDReview() {
                             <div key={uid(label)} className='flex_50 d-flex col-gap-20'>
                                 <p className='flex_50'><strong>{label.labelTxt}</strong></p>
                                 <p className='flex_50'>
-                                    {label.objName === "dob" && userInfo[label.objName].toLocaleDateString()}
+                                    {label.objName === "dob" && new Date(userInfo[label.objName]).toLocaleDateString()}
                                     {label.objName !== "dob" && userInfo[label.objName]}
                                 </p>
                             </div>

@@ -130,7 +130,7 @@ export default function RegisterReview({ register, setBoolean }) {
                         <div className='d-flex'>
                             <div className='flex_50 d-flex'>
                                 <p className='flex_50'><strong>Date of Birth</strong></p>
-                                <p className='flex_50'>{register.dob.toLocaleDateString()}</p>
+                                <p className='flex_50'>{new Date(register.dob).toLocaleDateString()}</p>
                             </div>
                             <div className='flex_50 d-flex'>
                                 <p className='flex_50'><strong>Gender</strong></p>

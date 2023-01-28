@@ -26,9 +26,9 @@ export default function TrackApplication() {
 
     return (
         <>
-            <RegisterSteps verifyemailMsg={userInfo.isEmailIdVerified} />
+            {!userInfo?.orderId && <RegisterSteps verifyemailMsg={userInfo.isEmailIdVerified} />}
             <div className='d-flex col-gap-20'>
-                <Formstatus statusActive="1" verifyemailMsg={userInfo.isEmailIdVerified} />
+                <Formstatus statusActive={userInfo?.orderId ? "3" : "1"} verifyemailMsg={userInfo.isEmailIdVerified} />
                 <div className='register-form'>
                     <div className='form-card mb-4'>
                         <div className='form-header'>
@@ -38,10 +38,17 @@ export default function TrackApplication() {
                             <div className='application'>
                                 <h5>Welcome, CUET (UG) - 2022 Applicant!</h5>
                                 <p>You can apply and track your CUET (UG) - 2022 application here.<br />
-                                    Your application number <strong>{userInfo.appNo}</strong> and your application status is <span>NOT SUBMITTED</span></p>
+                                    Your application number <strong>{userInfo.appNo}</strong> and your application status is
+                                    <span className={userInfo?.orderId ? "active" : ""}>
+                                        {userInfo?.orderId ? "SUBMITTED" : "NOT SUBMITTED"}
+                                    </span>
+                                </p>
                             </div>
                             <div className="text-center py-4">
-                                <button onClick={handleSteps} className='brown_btn'>Continue Application Form</button>
+                                {userInfo?.orderId
+                                    ? <button onClick={handleSteps} className='green_btn'>Download / Print : Confirmation Page </button>
+                                    : <button onClick={handleSteps} className='brown_btn'>Continue Application Form</button>
+                                }
                             </div>
                         </div>
                     </div>

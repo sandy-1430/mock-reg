@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Registerform from './Registerform';
 import RegisterReview from './RegisterReview';
 import Formstatus from '../components/Formstatus';
+import { useNavigate } from 'react-router';
 
 export default function MockRegister() {
     const [register, setRegister] = useState({
@@ -45,6 +46,15 @@ export default function MockRegister() {
         register: true,
         review: false
     });
+
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        let getUserinfo = JSON.parse(localStorage.getItem("userInfo"));
+        if (!getUserinfo) {
+            navigate("/");
+        }
+    }, [navigate])
 
     return (
         <>

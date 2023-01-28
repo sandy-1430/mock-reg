@@ -30,8 +30,8 @@ export default function ExamForm() {
         subjects: ["English", "Hindi"],
         states: ["DELHI", "HARYANA", "UTTARPRADHESH"],
         DELHI: ["DELHI/NEW DELHI (DL01)"],
-        HARYANA: ["FARIDABAD (HR03), GURUGRAM (HR04)"],
-        UTTARPRADHESH: ["GHAZIBAD (UP 07), MERUTI (UP14), NOIDA/GREATER NOIDA (UP 09)"]
+        HARYANA: ["FARIDABAD (HR03)", "GURUGRAM (HR04)"],
+        UTTARPRADHESH: ["GHAZIBAD (UP 07)", "MERUTI (UP14)", "NOIDA/GREATER NOIDA (UP 09)"]
     }
 
     return (

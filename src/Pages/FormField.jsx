@@ -18,8 +18,6 @@ export default function FormField() {
         year: new Date(userInfo.dob).getFullYear()
     })
 
-    console.log(userInfo.univrstyAndProgDtls);
-
     const [showUni, setShowUni] = useState([])
 
     let date = new Date();
@@ -83,12 +81,10 @@ export default function FormField() {
             review: true,
             form: false
         }))
-
-        console.log("review");
     }
 
     const handleNext = () => {
-        if (step.currentStep <= 5) {
+        if (step.currentStep < 6) {
             setStep((prev) => ({
                 ...prev,
                 currentStep: step.currentStep + 1,
@@ -101,11 +97,17 @@ export default function FormField() {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        "Acces-Control-Allow-Origin": "*",
                         Client_ID: "MVOZ7rblFHsvdzk25vsQpQ==",
                     },
                 }).then((result) => {
                     console.log(result);
+                    if (result.data.ResultMessage === "SUCCESS") {
+                        setStep((prev) => ({
+                            ...prev,
+                            currentStep: null,
+                            payment: true,
+                        }))
+                    }
                 });
 
         }
@@ -136,8 +138,6 @@ export default function FormField() {
                 year: new Date(userInfo.dob).getFullYear()
             })
         }
-        console.log(userInfo);
-
     }, [userInfo])
 
     return (
@@ -201,7 +201,6 @@ export default function FormField() {
                         </button>
                     </div>
                 }
-
             </div>
         </form>
     )

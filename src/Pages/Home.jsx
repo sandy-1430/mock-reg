@@ -4,6 +4,7 @@ import TrackApplication from './components/TrackApplication';
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./ContextApi/UserContext";
 import FormField from './FormField';
+import Payment from './Payment/Payment';
 
 export default function Home() {
     const [userInfo, setuserInfo] = useState({
@@ -12,9 +13,10 @@ export default function Home() {
     const [step, setStep] = useState({
         trackAppl: false,
         verifyEmail: false,
-        currentStep: 1,
+        currentStep: null,
         form: true,
-        review: false
+        review: false,
+        payment: true,
     });
 
     let navigate = useNavigate();
@@ -41,6 +43,7 @@ export default function Home() {
                 {step.verifyEmail && <VerifyEmail />}
                 {step.trackAppl && <TrackApplication />}
                 {step.currentStep && <FormField />}
+                {step.payment && <Payment />}
             </UserContext.Provider>
         </>
     )

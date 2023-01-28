@@ -10,6 +10,7 @@ export default function UploadDocsForm() {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = function (e) {
+            console.log(e);
             let binaryData = e.target.result;
             let base64String = window.btoa(binaryData);
             func((prev) => ({

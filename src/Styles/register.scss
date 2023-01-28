@@ -352,6 +352,12 @@
             font-weight: 600;
             margin: 0 0 0 16px;
             border-radius: 4px;
+
+            &.active {
+                color: #fff;
+                background: #5DB077;
+                border: 1px solid #5DB077;
+            }
         }
     }
 }
@@ -719,14 +725,21 @@
             }
         }
 
-        .flex_70 {
-            flex-basis: 70%;
-        }
-
         .subTitle .brownTxt {
             color: #BF6E69;
             font-size: 20px;
             font-weight: 600;
+        }
+    }
+
+    &.payment {
+        .form-header h5 {
+            color: #EC6172;
+        }
+
+        hr {
+            border: 1px solid #E1E1E1;
+            margin: 40px 0;
         }
     }
 }

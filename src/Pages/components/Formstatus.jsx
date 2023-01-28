@@ -14,7 +14,7 @@ export default function Formstatus({ statusActive, loginScreen, verifyemailMsg }
                     <ul>
                         {
                             status.map((list, index) => (
-                                <li className={parseFloat(statusActive) === index + 1 ? "active" : ""} key={index}>
+                                <li className={parseFloat(statusActive) > index ? "active" : ""} key={index}>
                                     {list}
                                 </li>
                             ))
