@@ -91,7 +91,7 @@ export default function RegisterReview({ register, setBoolean }) {
         if (validateCaptcha(pin)) {
             setValidPin(true);
             alert("register successfully");
-            navigate("/");
+            navigate("/login");
         } else {
             setValidPin(false);
         }

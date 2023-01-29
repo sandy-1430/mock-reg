@@ -13,9 +13,9 @@ export default function Home() {
 
     const [step, setStep] = useState({
         loading: false,
-        trackAppl: false,
+        trackAppl: true,
         verifyEmail: false,
-        currentStep: 1,
+        currentStep: null,
         form: true,
         review: false,
         payment: false,
